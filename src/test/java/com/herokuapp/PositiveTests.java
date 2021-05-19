@@ -1,16 +1,17 @@
 package com.herokuapp;
 
+import com.sun.org.apache.bcel.internal.classfile.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-import utility.Utility;
+import utility.Sleep;
 
 public class PositiveTests {
 
     public static final String URL = "http://the-internet.herokuapp.com/login";
-    Utility lets = new Utility();
+    Sleep sleep = new Sleep();
 
     @Test
     public void loginTest() {
@@ -25,18 +26,11 @@ public class PositiveTests {
     //    WebElement logoutButton = driver.findElement(By.linkText("Logout"));
     //    WebElement logoutButton = driver.findElement(By.xpath("");
     //    WebElement successMessage = driver.findElement(By.cssSelector("#flash"));
-
         username.click();
         username.sendKeys("Hello");
 
-
-
-        lets.sleep(3000);
+        sleep.sleep(3000);
         driver.quit();
-
-
-
     }
-
 
 }
